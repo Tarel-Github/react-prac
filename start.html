@@ -6,6 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>리엑트 연습</title>
     <!--리엑트 연습준비-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+    <!--리엑트 시작 코드 입력, script가 여러개 있는데, 이 중 가장 아랫 것만 출력 됌-->
+    <script type="text/babel">
+      const component = <h1>리액트 기본</h1>;
+      const container = document.getElementById("root");
+
+      ReactDOM.render(component, container);
+    </script>
+
+    <script type="text/babel">
+      const name = "책";
+      const imgUrl = "http://placedog.net/400/200";
+      const component_2 = (
+        <div>
+          <h1>{name} 님 안녕하세요</h1>
+          <img src={imgUrl} />
+        </div>
+      );
+      const container_2 = document.getElementById("root");
+      ReactDOM.render(component_2, container_2);
+    </script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        render() {
+          return <h1>리액트 기본</h1>;
+        }
+      }
+
+      const container_3 = document.getElementById("root");
+      ReactDOM.render(<App />, container_3);
+    </script>
+  </body>
 </html>
